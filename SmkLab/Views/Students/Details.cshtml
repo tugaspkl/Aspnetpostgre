@@ -1,0 +1,50 @@
+﻿@model SmkLab.Models.Students
+
+@{
+    ViewData["Title"] = "Details";
+}
+<h1>Details</h1>
+
+<div>
+    <h4>Student</h4>
+    <hr />
+    <dl class="row">
+        <!--Nama depan--->
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.FirstName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.FirstName)
+        </dd>
+
+        <!--Nama belakang--->
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.LastName)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.LastName)
+        </dd>
+
+        <!--Email--->
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <!--Jurusan--->
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Jurusan)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Jurusan)
+    </dl>
+</div>
+<div>
+
+    <a asp-action="Index">Back to List</a>
+</div>

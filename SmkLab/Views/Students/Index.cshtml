@@ -1,0 +1,58 @@
+﻿@model IEnumerable<SmkLab.Models.Students>
+
+@{
+    ViewData["Title"] = "Student";
+}
+<style>
+    a {
+        color: white;
+    }
+</style>
+<h1>Student List</h1>
+
+<a asp-action="Create">
+    <button type="button" class="btn btn-primary position-relative">
+        Create New
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+            +
+        </span>
+    </button>
+</a>
+
+<table class="table mt-3">
+    <thead class="table-dark">
+        <tr>
+            <th scope="col">No</th>
+            <th scope="col">FirstName</th>
+            <th scope="col">LastName</th>
+            <th scope="col">Email</th>
+            <th scope="col">Jurusan</th>
+            <th> </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <th>@Html.DisplayFor(modelItem => item.id)</th>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Jurusan)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.id"><span class="badge bg-primary">Edit</span></a> |
+                <a asp-action="Details" asp-route-id="@item.id"><span class="badge bg-success">Details</span></a> |
+                <a asp-action="Delete" asp-route-id="@item.id"><span class="badge bg-danger">Delete</span></a>
+            </td>
+        </tr>
+        }
+    </tbody>
+</table>
